@@ -1,1 +1,3 @@
-console.log("HezyMasterK53-SA loaded successfully!");
+function showMessage(code){
+    alert("Welcome to " + code + " practice!");
+}
