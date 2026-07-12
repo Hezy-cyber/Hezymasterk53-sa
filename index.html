@@ -3,34 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hezy Master K53 SA</title>
-
-<link rel="stylesheet" href="css/style.css">
+<title>Hezymaster K53 SA</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🚗 Hezy Master K53 SA</h1>
+<header>
+    <h1>🇿🇦 HEZYMASTER K53 SA</h1>
+    <p>South African Learner's Licence Practice</p>
+</header>
 
-<p>Choose your learner's licence code:</p>
+<div class="container">
 
-<button onclick="showMessage('Code 1 - Motorcycle')">
-🏍 Code 1 - Motorcycle
-</button>
+    <div class="card">
+        <h2>🏍 Code 1</h2>
+        <p>Motorcycle Learner's Licence</p>
+        <button onclick="location.href='code1.html'">Start Practice</button>
+    </div>
 
-<br><br>
+    <div class="card">
+        <h2>🚗 Code 2</h2>
+        <p>Light Motor Vehicle</p>
+        <button onclick="location.href='code2.html'">Start Practice</button>
+    </div>
 
-<button onclick="showMessage('Code 2 - Light Motor Vehicle')">
-🚗 Code 2 - Light Motor Vehicle
-</button>
+    <div class="card">
+        <h2>🚛 Code 3</h2>
+        <p>Heavy Motor Vehicle</p>
+        <button onclick="location.href='code3.html'">Start Practice</button>
+    </div>
 
-<br><br>
+</div>
 
-<button onclick="showMessage('Code 3 - Heavy Motor Vehicle')">
-🚛 Code 3 - Heavy Motor Vehicle
-</button>
+<footer>
+    <p>© 2026 Hezymaster K53 SA</p>
+</footer>
 
-<script src="js/app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
