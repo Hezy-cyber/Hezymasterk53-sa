@@ -1,9 +1,9 @@
-function showMessage(code) {
-    if (code === "Code 1 - Motorcycle") {
+function startPractice(code) {
+    if (code === 1) {
         window.location.href = "code1.html";
-    } else if (code === "Code 2 - Light Motor Vehicle") {
+    } else if (code === 2) {
         window.location.href = "code2.html";
-    } else if (code === "Code 3 - Heavy Motor Vehicle") {
+    } else if (code === 3) {
         window.location.href = "code3.html";
     }
 }
