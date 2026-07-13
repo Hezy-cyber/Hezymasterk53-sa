@@ -54,9 +54,9 @@ button{
 
 </div>
 
-<script>
+    <script>
 
-const quiz=[
+const quiz = [
 {
 question:"What is the general speed limit in an urban area unless otherwise indicated?",
 answers:["60 km/h","80 km/h","100 km/h"],
@@ -74,12 +74,12 @@ correct:1
 }
 ];
 
-let current=0;
-let marks=0;
+let current = 0;
+let marks = 0;
 
 function loadQuestion(){
 
-if(current>=quiz.length){
+if(current >= quiz.length){
 document.getElementById("question").style.display="none";
 document.getElementById("answers").style.display="none";
 document.getElementById("nextBtn").style.display="none";
@@ -88,39 +88,27 @@ document.getElementById("score").innerHTML="Your score: "+marks+" / "+quiz.lengt
 return;
 }
 
-document.getElementById("counter").innerHTML=
-"Question "+(current+1)+" of "+quiz.length;
+document.getElementById("counter").innerHTML =
+"Question " + (current + 1) + " of " + quiz.length;
 
-document.getElementById("question").innerHTML=quiz[current].question;
+document.getElementById("question").innerHTML = quiz[current].question;
 
-let html="";
-
-quiz[current].answers.forEach((a,index)=>{
-html+=`<button onclick="checkAnswer(${index})">${a}</button>`;
-});
-
-document.getElementById("answers").innerHTML=html;
-
-}[current].question;
-
-let html="";
+let html = "";
 
 quiz[current].answers.forEach((a,index)=>{
-html+=`<button onclick="checkAnswer(${index})">${a}</button>`;
+html += `<button onclick="checkAnswer(${index})">${a}</button>`;
 });
 
-document.getElementById("answers").innerHTML=html;
+document.getElementById("answers").innerHTML = html;
 
 }
 
-
 function checkAnswer(answer){
 
-const buttons=document.querySelectorAll("#answers button");
+const buttons = document.querySelectorAll("#answers button");
+buttons.forEach(btn => btn.disabled = true);
 
-buttons.forEach(btn=>btn.disabled=true);
-
-if(answer===quiz[current].correct){
+if(answer === quiz[current].correct){
 marks++;
 alert("✅ Correct!");
 }else{
@@ -128,19 +116,7 @@ alert("❌ Wrong!");
 }
 
 current++;
-
 setTimeout(loadQuestion,500);
-
-}
-if(answer===quiz[current].correct){
-marks++;
-alert("Correct!");
-}else{
-alert("Wrong!");
-}
-
-current++;
-loadQuestion();
 
 }
 
@@ -149,6 +125,3 @@ function nextQuestion(){}
 loadQuestion();
 
 </script>
-
-</body>
-</html>
