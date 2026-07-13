@@ -45,7 +45,7 @@ button{
 <h2>🚗 Code 2 Practice</h2>
 
 <h3 id="question"></h3>
-
+<p id="counter"></p>
 <div id="answers"></div>
 
 <button id="nextBtn" onclick="nextQuestion()">Next</button>
@@ -83,9 +83,13 @@ if(current>=quiz.length){
 document.getElementById("question").style.display="none";
 document.getElementById("answers").style.display="none";
 document.getElementById("nextBtn").style.display="none";
+document.getElementById("counter").style.display="none";
 document.getElementById("score").innerHTML="Your score: "+marks+" / "+quiz.length;
 return;
 }
+
+document.getElementById("counter").innerHTML=
+"Question "+(current+1)+" of "+quiz.length;
 
 document.getElementById("question").innerHTML=quiz[current].question;
 
@@ -97,10 +101,37 @@ html+=`<button onclick="checkAnswer(${index})">${a}</button>`;
 
 document.getElementById("answers").innerHTML=html;
 
+}[current].question;
+
+let html="";
+
+quiz[current].answers.forEach((a,index)=>{
+html+=`<button onclick="checkAnswer(${index})">${a}</button>`;
+});
+
+document.getElementById("answers").innerHTML=html;
+
 }
+
 
 function checkAnswer(answer){
 
+const buttons=document.querySelectorAll("#answers button");
+
+buttons.forEach(btn=>btn.disabled=true);
+
+if(answer===quiz[current].correct){
+marks++;
+alert("✅ Correct!");
+}else{
+alert("❌ Wrong!");
+}
+
+current++;
+
+setTimeout(loadQuestion,500);
+
+}
 if(answer===quiz[current].correct){
 marks++;
 alert("Correct!");
